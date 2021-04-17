@@ -63,11 +63,7 @@ button {
     
 }
 
-:host /deep/ .mat-list-item-content {
-   
-    
-    
-  }
+
 
 .container {
     width: 800px;

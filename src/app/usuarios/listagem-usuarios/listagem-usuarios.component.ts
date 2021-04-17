@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/core/usuarios.service';
 import { Usuario } from 'src/app/models/usuario';
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { CadastrarUsuarioComponent } from '../cadastrar-usuario/cadastrar-usuario.component';
 import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.component';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -32,13 +32,7 @@ export class ListagemUsuariosComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.params['id'];
     
       if (this.id) {
-        const dialogConfig = new MatDialogConfig ();
-        dialogConfig.disableClose = true;
-        dialogConfig.autoFocus = true;
-        dialogConfig.width = "40%";
         
-        this.dialog.open(EditarUsuarioComponent, dialogConfig);
-
         this.usuarioService.refreshUsuario$.subscribe(() => {
           this.listarUsuarios();
     
@@ -65,12 +59,10 @@ export class ListagemUsuariosComponent implements OnInit {
  openDialog() {
 
   const dialogConfig = new MatDialogConfig ();
-  dialogConfig.disableClose = true;
-  dialogConfig.autoFocus = true;
-  dialogConfig.width = "40%";
   
   
-  this.dialog.open(CadastrarUsuarioComponent, dialogConfig);
+  
+  this.dialog.open(CadastrarUsuarioComponent);
  }
 
  remover(id: number) : void {
@@ -85,6 +77,20 @@ export class ListagemUsuariosComponent implements OnInit {
 abrir (id: number): void {
   
   this.router.navigateByUrl('/usuarios/' + id);
+}
+
+editar(eid: number): void { 
+  
+  this.usuario = this.usuarios.filter(x=>x.id ==eid) [0]
+  const dialogConfig = new MatDialogConfig();
+
+   dialogConfig.data = {
+      id : this.usuario.id
+   
+};
+
+const dialogSubTaskRef = this.dialog.open(EditarUsuarioComponent, dialogConfig);
+  
 }
 
 
