@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "nome": "Fulano",
+      "email": "camilo@email.com",
+      "site": "wwww.hardmob.com.br",
+      "id": 1
+    },
+    {
+      "nome": "Maria Julia",
+      "email": "maria@gmail.com",
+      "site": "maria",
+      "id": 3
+    },
+    {
+      "nome": "123455",
+      "email": "12355",
+      "site": "1345",
+      "id": 4
+    }
+  ]
+}

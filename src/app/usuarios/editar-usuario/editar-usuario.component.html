@@ -1,0 +1,13 @@
+<mat-list *ngIf="usuario; else semRegistro">
+    <mat-list-item> Título: {{usuario.nome}}</mat-list-item>
+    <mat-list-item> Data de lançamento: {{usuario.email}}</mat-list-item>
+    <mat-list-item> Gênero: {{usuario.site}}</mat-list-item>
+   
+    
+    </mat-list>
+    
+    <ng-template #semRegistro>
+      <h1 class="full-width main-div">
+        Sem registros! 
+      </h1>
+    </ng-template>

@@ -1,0 +1,89 @@
+
+.email {
+    display: flex;
+ }
+
+mat-icon{
+    font-size: 20px;
+    padding-left: 8px;
+    max-width: 20px;
+    
+    
+
+}
+
+p { 
+    margin-block-end: 0.20em;
+}
+
+h4 {
+    padding-left: 9px;
+    padding-bottom: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0.20em;
+}
+
+
+
+.addon {
+    font-size: 14px;
+    font-family: Roboto, "Helvetica Neue";
+    padding-left: 9px; 
+    padding-top: 1px;
+    padding-bottom: 15px;
+    
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    
+   
+}
+
+.dados {
+    width: 600px;
+}
+
+.botoes {
+    margin-left: 80px;
+    align-items: center;
+}
+
+button {
+    
+    margin-left: 12px;
+    height: 30px;
+    width: 200px;
+    
+}
+
+:host /deep/ .mat-list-item-content {
+   
+    
+    
+  }
+
+.container {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+
+mat-divider {
+   width: 1100px!important;
+}
+
+.botaoincluir {
+    margin-left : 980px;
+    
+}
+
+
+
+

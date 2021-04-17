@@ -1,0 +1,37 @@
+<mat-list>
+
+  <button class="botaoincluir" mat-flat-button color="primary" (click)="openDialog()" >Incluir Usuário</button>
+
+  
+  <h1 mat-subheader>Usuários</h1>
+
+  <div class="container">
+  <mat-list-item *ngFor="let usuario of usuarios">
+    <mat-icon mat-list-icon>folder</mat-icon>
+
+    
+    <div class="usuario">
+      <div class="dados">
+      <h4 mat-line>{{usuario.nome}}</h4>
+      <div class="email">
+        <mat-icon> email</mat-icon>
+        <a  [href]=" 'mailto:' + usuario.email" target="_blank" mat-line class="demo-2">{{usuario.email}}</a>
+      </div>
+      <div class="email">
+        <mat-icon> link</mat-icon>
+        <a  [href]=" 'http://' + usuario.site" target="_blank" mat-line  class="demo-2">{{usuario.site}}</a>
+      </div>
+      <div mat-line class="addon">Added</div>
+    </div>
+      <div mat-line class="botoes">
+        <button mat-flat-button color="primary" (click)="abrir(usuario.id)"  >Editar</button>
+        <button mat-flat-button color="warn" (click)="remover(usuario.id)">Excluir</button>
+        <mat-divider [inset]="true"></mat-divider>
+      </div>
+    </div>         
+  </mat-list-item>
+
+ </div>
+  
+
+</mat-list>
